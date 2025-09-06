@@ -1,16 +1,31 @@
-# ⌨️ Bad USB
+# 07_badusb.md
 
-## Introducción
-Flipper Zero puede actuar como dispositivo BadUSB, es decir simular un teclado o ratón USB para inyectar comandos en un ordenador anfitrión. Utiliza el lenguaje de scripting tipo Rubber Ducky (Duckyscript) para escribir payloads: secuencias de teclas automáticas. Por ejemplo, un payload típico puede abrir una terminal, ejecutar comandos o descargar archivos sin intervención del usuario. Flipper reconoce una carpeta especial en la microSD (/badusb/) donde colocas archivos .txt con tu script. Luego, en Bad USB, seleccionas el script y conectas Flipper por USB (cable-C) en modo HID. Al presionar “Run”, Flipper envía las pulsaciones según el guión.
+## Bad USB (Emulación HID)
 
-Por ejemplo, un payload sencillo puede hacer que Flipper abra el Bloc de notas y escriba “¡Hola mundo!” o que ejecute instrucciones de PowerShell. Flipper soporta atajos avanzados (Alt+numpad, combinaciones rápidas, etc.). También es posible conectar vía Bluetooth (BLE) como un teclado inalámbrico para ejecutar scripts si el PC lo permite. Es fundamental entender que BadUSB es poderoso: puede crear puertas traseras, robar contraseñas o instalar malware si se abusa. Su uso debe limitarse a entornos de prueba bajo consentimiento.
+El Flipper Zero puede actuar como un **dispositivo HID USB malicioso** (BadUSB), es decir, se conecta a un computador y se hace pasar por teclado o ratón. Al ejecutar un *payload* de BadUSB, el Flipper envía comandos de teclado preprogramados a la máquina conectada, lo cual puede abrir terminales, cambiar configuraciones o instalar software automáticamente:contentReference[oaicite:53]{index=53}. Estos payloads se escriben en formato DuckyScript (.txt) que Flipper ejecuta línea por línea, como si se escribieran en el teclado. 
 
-**Laboratorio BadUSB:** Crea un script básico (por ejemplo, abre calculadora o escribe texto) usando Duckyscript y guárdalo en un archivo .txt. Carga el archivo en la tarjeta SD bajo /badusb/. En Flipper, ve a Bad USB, selecciona el modo USB o BLE, ajusta el layout de teclado si es necesario, y ejecuta el payload conectado a un PC de pruebas. Verifica que Flipper logra automatizar las teclas esperadas. Discute los peligros: este método es análogo a un USB Rubber Ducky.
+El scripting de Flipper es compatible con DuckyScript 1.0 con extensiones. Por ejemplo, soporte de métodos Alt+Numpad y SysRq. Para usarlo, primero cree un archivo de texto con comandos (p.ej., `DELAY 1000`, `GUI r`, `STRING notepad`, `ENTER`, etc.) usando cualquier editor. Luego copie este archivo a la carpeta `/microSD/badusb/` del Flipper usando qFlipper o la app móvil. En el menú **Bad USB** del dispositivo aparecerá su payload. Puede ejecutar el payload en modo USB (connectores USB) o en modo BLE (Bluetooth):contentReference[oaicite:54]{index=54}. Seleccione el payload y presione *Run* para inyectar los comandos en el equipo destino.
 
----
-## 🧪 Laboratorio
-1. Configura un payload Rubber Ducky básico...
+## Laboratorio práctico
 
----
-## 🤔 Reflexión Ética
-Los ataques con BadUSB son peligrosos...
+1. Conecte Flipper al PC con un cable USB-C. En la app móvil o qFlipper, diríjase a *Sistema → Flasher (o Desktop → BadUSB)*.  
+2. Prepare un payload sencillo: cree un archivo `demo.txt` con contenido DuckyScript, por ejemplo:
+
+```
+DELAY 5000
+GUI r
+STRING notepad
+ENTER
+STRING HolaFlipper
+ENTER
+```
+
+3. Copie `demo.txt` a la carpeta `microSD/badusb/` del Flipper usando qFlipper (o acceda a la unidad que aparece al conectar).  
+4. En el menú del Flipper, vaya a **Bad USB**. Debería ver `demo.txt` listado. Selecciónelo. Asegúrese de que la aplicación BadUSB muestre el ícono de USB.  
+5. Conecte el Flipper al PC y, con éste desbloqueado y listo para recibir teclazos, pulse *Run* en el Flipper. Tras unos segundos de delay, debería abrirse la ventana de ejecutar (Win+R), y luego *Notepad* con el texto “HolaFlipper” escrito automáticamente.  
+
+> **Nota:** En modo BLE, se configuraría Flipper por Bluetooth como un teclado inalámbrico HID. El procedimiento es similar, pero requiere emparejar el Flipper como dispositivo Bluetooth HID en el sistema.
+
+## Reflexión ética
+
+La función BadUSB puede ser poderosa y peligrosa. Un uso indebido puede inyectar malware o comandos no autorizados en equipos ajenos:contentReference[oaicite:55]{index=55}. **Solo utilice payloads BadUSB en computadoras suyas o donde tenga permiso explícito**. Nunca conecte su Flipper como teclado a un sistema público o de terceros sin consentimiento. Además, sea cauteloso al escribir scripts: errores como bucles infinitos o comandos peligrosos pueden causar daños. Use DuckyScript con responsabilidad, y considere siempre la legislación sobre acceso y uso de sistemas informáticos antes de probar ataques de BadUSB en entornos reales.
