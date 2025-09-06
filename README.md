@@ -14,7 +14,7 @@ incibe.es
 github.com
 .
 
-!([ruta/a/tu/logo.png](https://github.com/speinador/Curso_Flipper_Zero/blob/main/img/5402ad6b-b6dc-4151-a754-87692329319d.png)
+(https://github.com/speinador/Curso_Flipper_Zero/blob/main/img/5402ad6b-b6dc-4151-a754-87692329319d.png)
 
 Flipper Zero en mano; combina pantalla, botones y varios sensores (Sub-GHz, RFID, NFC, IR) para tareas de hacking ético
 incibe.es
