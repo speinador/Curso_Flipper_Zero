@@ -1,12 +1,17 @@
-# 🔌 GPIO y Módulos Externos
+## GPIO y módulos externos
 
-## Introducción
-El puerto GPIO de Flipper Zero permite conectar módulos...
+Flipper Zero posee un conector de expansión GPIO con **18 pines** (alimentación y E/S) en la parte superior:contentReference[oaicite:66]{index=66}. Estos pines permiten conectar módulos externos y realizar tareas de hardware como depuración, flasheo, sensorización o comunicaciones serie. Flipper puede actuar como convertidor USB a UART/SPI/I2C según la configuración del menú GPIO:contentReference[oaicite:67]{index=67}. Los pines I/O son tolerantes a 3.3V (con protecciones ESD mediante resistencias internas):contentReference[oaicite:68]{index=68}:contentReference[oaicite:69]{index=69}. Además, el Flipper dispone de pines de alimentación (+3.3V y +5V) para energizar módulos externos (por defecto +5V está desactivado y debe habilitarse en el menú).
 
----
-## 🧪 Laboratorio
-1. Conecta un LED al GPIO...
+Uno de los módulos más conocidos es la **Wi-Fi Developer Board** oficial (basada en ESP32-S2). Esta placa añade conectividad Wi-Fi al Flipper y permite descargar/depurar firmware de microcontroladores vía USB o por Wi-Fi:contentReference[oaicite:70]{index=70}. Otras placas populares incluyen módulos CC1101 externos (para mayor rango Sub-GHz), placas NRF24 o ESP32 de terceros (para 2.4GHz, running firmware como Marauder), o lectores de tarjetas (p.ej. PN532 para RFID). Para instalar un módulo, inserte la placa en los pines GPIO del Flipper respetando la orientación: si usa funda de silicona retire la funda o asegúrese de que el módulo calce completamente:contentReference[oaicite:71]{index=71}. Luego en el menú GPIO seleccione *Configuración* para activar funciones como UART Bridge o habilitar la alimentación de 5V. 
 
----
-## 🤔 Reflexión Ética
-Manipular hardware externo sin permisos...
+## Laboratorio práctico
+
+1. Con el Flipper apagado, conecte una placa Wi-Fi DevBoard (ESP32-S2) en los pines GPIO (encaje firme). Luego encienda el Flipper.  
+2. En el menú **GPIO**, vaya a *Interface* y active la opción **USB-UART Bridge**. Esto convierte al Flipper en un convertidor serie USB-UART. Conecte un cable USB al Flipper y use un programa terminal (PuTTY, minicom) en la PC para comunicarse con un dispositivo externo conectado al UART del módulo.  
+3. (Opcional) En *GPIO* también habilite **+5V** (por defecto está en OFF) si necesita alimentar la placa desde el Flipper. Tenga precaución de no exceder 5W totales.  
+4. Pruebe otro módulo: apague Flipper, conecte por ejemplo un módulo CC1101 externo (Sub-GHz) o un lector RFID al GPIO. Encienda el Flipper y observe nuevas opciones o LEDs en la placa externa. Use el menú correspondiente (p.ej., Sub-GHz) para interactuar.  
+5. Para la Wi-Fi DevBoard: consulte su documentación; normalmente esta placa está pre-flasheada con firmware de depuración. Puede actualizarla mediante USB o Wi-Fi desde los menús de la aplicación de desarrollador.
+
+## Reflexión ética
+
+Conectar hardware externo extiende enormemente las capacidades del Flipper, pero también añade precauciones. **Tome medidas de seguridad eléctrica**: no conecte dispositivos que excedan la tensión/consumo permitido (p.ej., no más de 5W totales):contentReference[oaicite:72]{index=72}. A nivel de uso, tenga en cuenta las mismas consideraciones éticas: usar módulos Wi-Fi o de radio para monitorear redes ajenas sin permiso sería ilegal. Use placas Wi-Fi para fines legítimos (p.ej., pruebas en su propia red) y respete las frecuencias reguladas. Además, al manipular hardware físico, asegúrese de no dañar otros dispositivos conectados; use siempre el Flipper con energía estable y sepa revertir configuraciones erróneas. Emplee los GPIO y módulos para aprendizaje responsable y pruebas autorizadas únicamente.
