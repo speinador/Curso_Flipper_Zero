@@ -3,6 +3,24 @@
 Bienvenido al **Curso de Flipper Zero**, orientado a principiantes y entusiastas del hacking ético.  
 Este curso busca enseñar de forma práctica y responsable el uso del dispositivo, sus módulos y riesgos de seguridad asociados.
 
+Flipper Zero es un dispositivo multifuncional de hardware de hacking portable, en forma de llavero, diseñado para explorar tecnologías de comunicación inalámbrica y sistemas de acceso. Cuenta con una pantalla LCD y botones físicos que permiten interactuar con tecnologías como RFID (baja y alta frecuencia), NFC, radio Sub-GHz (315/433/868 MHz, etc.), infrarrojos y más
+incibe.es
+flipperzero.one
+. Está pensado para mejorar las habilidades de seguridad informática (penetration testing) y experimentación, por ejemplo clonando llaves de acceso, controlando dispositivos IR o capturando señales de radio
+incibe.es
+flipperzero.one
+. Aunque su uso principal es ético y educativo, es fundamental usarlo responsablemente y conocer los riesgos de abusarlo: acceder sin permiso a sistemas ajenos, espiar señales o causar daños físicos es ilegal y peligroso
+incibe.es
+github.com
+.
+
+
+
+Flipper Zero en mano; combina pantalla, botones y varios sensores (Sub-GHz, RFID, NFC, IR) para tareas de hacking ético
+incibe.es
+flipperzero.one
+. Sus componentes abiertos (STM32 MCU, Linux de tiempo real) son completamente personalizables, y ofrece modos de operación autónomos o conectados (USB/Bluetooth).
+
 ## 📂 Contenido
 
 1. [Instalación del entorno](01_instalacion_entorno.md)
