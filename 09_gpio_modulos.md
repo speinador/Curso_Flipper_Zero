@@ -1,3 +1,5 @@
+# 09_gpio_modulos.md
+
 ## GPIO y módulos externos
 
 Flipper Zero posee un conector de expansión GPIO con **18 pines** (alimentación y E/S) en la parte superior:contentReference[oaicite:66]{index=66}. Estos pines permiten conectar módulos externos y realizar tareas de hardware como depuración, flasheo, sensorización o comunicaciones serie. Flipper puede actuar como convertidor USB a UART/SPI/I2C según la configuración del menú GPIO:contentReference[oaicite:67]{index=67}. Los pines I/O son tolerantes a 3.3V (con protecciones ESD mediante resistencias internas):contentReference[oaicite:68]{index=68}:contentReference[oaicite:69]{index=69}. Además, el Flipper dispone de pines de alimentación (+3.3V y +5V) para energizar módulos externos (por defecto +5V está desactivado y debe habilitarse en el menú).
