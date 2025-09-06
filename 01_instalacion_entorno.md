@@ -1,24 +1,22 @@
-# ⚙️ Instalación del Entorno
+# 01_instalacion_entorno.md
 
-Antes de usar Flipper Zero es necesario configurar el dispositivo y el software base. Primero inserta una tarjeta microSD (recomendado 16–32 GB) en la ranura lateral: en ella se almacenan las claves, tarjetas, controles y datos que leerá Flipper. La tarjeta debe formatearse en FAT32 o exFAT; Flipper la reconocerá automáticamente al encenderlo (tarda más con tarjetas muy grandes)
+## Instalación del entorno
 
-**Luego actualiza el firmware oficial a la última versión. Existen dos métodos:**
+Para comenzar a usar Flipper Zero, lo primero es preparar el entorno. Se recomienda formatear e insertar una tarjeta **MicroSD** (idealmente de 16–32 GB, hasta 256 GB) en el dispositivo, ya que Flipper almacena en ella datos como claves, tarjetas y remotos:contentReference[oaicite:22]{index=22}. A continuación, instale la **aplicación Flipper Mobile** (iOS/Android) para poder actualizar el firmware vía Bluetooth, y el software de escritorio **qFlipper** (Windows/Mac/Linux) para actualizaciones por USB:contentReference[oaicite:23]{index=23}:contentReference[oaicite:24]{index=24}. Ambos procesos permiten instalar la última versión del firmware oficial, lo cual es crucial para la seguridad y el funcionamiento óptimo del dispositivo:contentReference[oaicite:25]{index=25}:contentReference[oaicite:26]{index=26}.
 
-**Aplicación móvil Flipper (iOS/Android):** Activa Bluetooth en el móvil y en Flipper (Menú principal > Ajustes > Bluetooth), empareja y usa la función de actualización integrada. Esto tarda unos minutos y es conveniente para versiones estables.
+Una vez que el Flipper está cargado y conectado, enciéndalo manteniendo presionado el botón %back% durante unos segundos (ver el manual si es la primera vez). Luego, en la aplicación móvil active Bluetooth en el Flipper (Menú Principal → Ajustes → Bluetooth → ON) y conéctelo con la app del teléfono. El propio app mostrará un botón de **actualizar firmware** que permitirá descargar e instalar la última versión automáticamente:contentReference[oaicite:27]{index=27}. Alternativamente, en el PC ejecute qFlipper, conecte el Flipper por cable USB-C y en la pestaña de actualización haga clic en «Instalar» o «Actualizar» para aplicar el firmware más reciente:contentReference[oaicite:28]{index=28}. 
 
-**Aplicación de escritorio qFlipper:** Descarga e instala qFlipper en tu PC (Windows 10/11, macOS 10.14+ o Linux AppImage). qFlipper instala automáticamente los drivers USB necesarios en Windows. Conecta Flipper por USB-C y desde “Controles avanzados” puedes verificar la versión actual e iniciar la actualización. En Linux recuerda hacer ejecutable el AppImage y configurar las reglas udev.
+Finalmente, configure las preferencias básicas: ajuste la hora, idioma, formato (Menú Principal → Ajustes → Sistema) y cualquier otro parámetro de usuario. Compruebe también que la tarjeta MicroSD esté formateada en FAT32 y reconocida por Flipper:contentReference[oaicite:29]{index=29}.
 
-**En resumen, el laboratorio de instalación incluye:**
+## Laboratorio práctico
 
-- Formatear e insertar microSD.
-- Encender Flipper y navegar a Settings para confirmar que reconoce la microSD.
-- Instalar qFlipper en el PC (o la app móvil) y actualizar firmware a la versión release.
-- Comprobar que Flipper arranca correctamente y muestra fecha/hora (configurable en Settings)
+1. Inserte una tarjeta MicroSD formateada en FAT32 en el compartimento trasero del Flipper Zero.  
+2. Encienda el Flipper manteniendo pulsado el botón %back% (atras) durante 3 segundos.  
+3. Instale la aplicación **Flipper Mobile** en su smartphone y siga el proceso de emparejamiento Bluetooth (Menú Principal → Ajustes → Bluetooth → ON).  
+4. Con el Flipper conectado al teléfono, utilice la opción de **Actualizar** en la app móvil para instalar la versión más reciente del firmware.  
+5. Descargue e instale **qFlipper Desktop** desde la página oficial. Conecte el Flipper al ordenador por USB y abra qFlipper. En la sección de actualización, haga clic en **Actualizar** para instalar el firmware.  
+6. Verifique que el firmware se ha instalado correctamente viendo la versión en el menú Principal del dispositivo (Menú Principal → Ajustes → Acerca de).
 
----
-## 🧪 Laboratorio
-1. Descarga el software oficial...
+## Reflexión ética
 
----
-## 🤔 Reflexión Ética
-El uso responsable del dispositivo comienza con...
+Al configurar el Flipper Zero, es vital utilizar software oficial y mantener el dispositivo actualizado:contentReference[oaicite:30]{index=30}. Descargar firmware de fuentes no autorizadas o desactualizado puede introducir **vulnerabilidades** o software malicioso. Además, considere la seguridad de sus datos: nunca deje la tarjeta MicroSD con información sensible sin cifrar, y no pierda el control físico del dispositivo. Según INCIBE, mantener el firmware al día ayuda a proteger contra amenazas conocidas:contentReference[oaicite:31]{index=31}, garantizando un uso responsable y seguro del Flipper Zero.
