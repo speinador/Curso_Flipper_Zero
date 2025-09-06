@@ -1,4 +1,4 @@
-# 📘 Informe de Expertos: Guía Exhaustiva para la Configuración y el Uso del Flipper Zero
+# 📘 Guía para la Configuración y el Uso del Flipper Zero
 
 ---
 
