@@ -1,16 +1,17 @@
-# 🛠️ Custom Firmware
+# 08_custom_firmware.md
 
-## Introducción
-Además del firmware oficial, existen firmwares personalizados desarrollados por la comunidad (unofficial custom firmware, UFW) que agregan funciones extras. Ejemplos populares son Unleashed, RogueMaster, Momentum u otros. Estos forks suelen incluir soporte desbloqueado para regiones (remueven limitaciones de frecuencias), menús extra, apps nuevas, scripts mejorados y, en algunos casos, integración con módulos Wi-Fi o LoRa. Se instalan generalmente en modo DFU (recovery) usando QFlipper o herramientas de desarrollo (compilando localmente).
+Flipper Zero con firmware Unleashed personalizado.* El firmware oficial del Flipper Zero es de código abierto, pero existen **firmwares personalizados** desarrollados por la comunidad que amplían sus capacidades. El más popular es el *Unleashed Firmware*, que añade muchas funciones avanzadas al Flipper original:contentReference[oaicite:57]{index=57}:contentReference[oaicite:58]{index=58}. Por ejemplo, Unleashed amplía el soporte de protocolos RFID/NFC adicionales, desbloquea frecuencias Sub-GHz restringidas, mejora las interfaces de usuario (temas visuales y nuevas opciones) e incorpora medidas de seguridad adicionales (registro de auditoría, configuración avanzada):contentReference[oaicite:59]{index=59}:contentReference[oaicite:60]{index=60}. Otros firmwares como Xtreme o Momentum también incluyen herramientas de pentesting extra (por ejemplo, plugins de fuzzing) y juegos (ej. Doom) aprovechando el hardware del Flipper. 
 
-Importante: los repositorios de estos firmwares comunitarios suelen advertir explícitamente que su uso es experimental y exclusivamente educativo. Por ejemplo, el firmware RogueMaster señala “This software is for experimental purposes only and is not meant for any illegal activity… We do not condone illegal activity and strongly encourage keeping transmissions to legal/valid uses”. Es decir, no se aprueba usarlos para cometer ilícitos. Al instalar un firmware custom, también conviene saber que puedes perder garantías o incompatibilidades con actualizaciones oficiales.
+Para instalar un firmware personalizado se suele descargar el paquete (p.ej. release de Unleashed en GitHub) y cargarlo en Flipper usando qFlipper en modo *DFU*. Generalmente el procedimiento es: respaldar la configuración actual, iniciar el Flipper en modo bootloader (pantalla negra con logo), y luego con la aplicación de escritorio cargar el `.tgz` del firmware alternativo. Tras reiniciar, el dispositivo mostrará nuevas aplicaciones y ajustes. El firmware Unleashed está enfocado en estabilidad y suele mantenerse actualizado con aportes de la comunidad:contentReference[oaicite:61]{index=61}:contentReference[oaicite:62]{index=62}. Sin embargo, instalar firmware no oficial puede invalidar la garantía y debe hacerse con precaución.
 
-**Laboratorio Custom FW:** Explora instalar un firmware custom (por ejemplo RogueMaster). Pasos: hacer backup con qFlipper, bootear Flipper en DFU (mantener botones Izq+Atrás) y flashear el firmware descargado siguiendo las instrucciones oficiales. Luego arranca con el nuevo firmware y observa las diferencias (apps nuevas en el menú, opciones extra). Finalmente, si algo falla, usa qFlipper para restaurar el firmware oficial. Este ejercicio enseña sobre la comunidad de desarrollo y la flexibilidad del dispositivo. Recuerda siempre respetar los términos de uso.
+## Laboratorio práctico
 
----
-## 🧪 Laboratorio
-1. Descarga e instala un firmware modificado...
+1. **Preparación:** Asegúrese de tener su Flipper actualizado con firmware oficial reciente y una copia de seguridad (Menú Ajustes → Backup).  
+2. Descargue el firmware personalizado: p. ej., visite la página de lanzamientos de Unleashed (GitHub) y descargue el archivo `.tgz` más reciente.  
+3. Ponga el Flipper en **modo DFU**: desde el Flipper apagado, pulse ambos botones (izq + derecha) mientras conecta el cable USB al PC, manténgalos ~3s hasta que aparezca pantalla negra.  
+4. Abra qFlipper Desktop y use la opción *Actualizar firmware*. Seleccione el archivo `.tgz` descargado. Espere a que el software flashee el dispositivo (esto demora unos segundos).  
+5. Una vez terminado, el Flipper se reiniciará. Verifique que en el Menú Principal aparezcan nuevas apps y opciones. Compruebe la versión del firmware en *Ajustes → Acerca de* para confirmar el cambio.
 
----
-## 🤔 Reflexión Ética
-El uso de firmware modificado puede...
+## Reflexión ética
+
+Instalar firmware personalizado implica tomar responsabilidad adicional. Como advierte INCIBE, hay que usar el Flipper de forma ética y legal, siguiendo las leyes vigentes:contentReference[oaicite:63]{index=63}:contentReference[oaicite:64]{index=64}. Con firmware alternativo, tenga en cuenta que algunas funciones desbloqueadas podrían ser ilegales en ciertas regiones (p.ej., transmisión en frecuencia no permitida):contentReference[oaicite:65]{index=65}. Además, modificar firmware elimina el respaldo del fabricante: en general **anula la garantía** y podría causar malfuncionamientos si no se hace correctamente. Por ello, siempre descargue firmware de fuentes confiables (repositorios oficiales) y mantenga copias de seguridad. Use estas capacidades sólo para aprender y fortalecer la seguridad, no para vulnerarla.
